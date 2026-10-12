@@ -20,7 +20,7 @@ A beginner-friendly cybersecurity project built with Python to explore security 
 - [x] Git repository initialized
 - [x] `.gitignore` created
 - [x] Python program runs successfully
-- [ ] Implement security checks
+- [x] Implement security checks
 - [ ] Add suspicious-message detection
 - [ ] Add audit logging
 - [ ] Write tests and documentation

@@ -1,0 +1,84 @@
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mnew file mode 100644[m
+[1mindex 0000000..35a6b1f[m
+[1m--- /dev/null[m
+[1m+++ b/.gitignore[m
+[36m@@ -0,0 +1,21 @@[m
+[32m+[m
+[32m+[m[32m# Python cache files[m
+[32m+[m[32m__pycache__/[m
+[32m+[m[32m*.py[cod][m
+[32m+[m
+[32m+[m[32m# Virtual environments[m
+[32m+[m[32m.venv/[m
+[32m+[m[32mvenv/[m
+[32m+[m
+[32m+[m[32m# Secret configuration[m
+[32m+[m[32m.env[m
+[32m+[m[32m.env.*[m
+[32m+[m[32m!.env.example[m
+[32m+[m
+[32m+[m[32m# Local logs[m
+[32m+[m[32m*.log[m
+[32m+[m
+[32m+[m[32m# Editor and operating-system files[m
+[32m+[m[32m.vscode/[m
+[32m+[m[32m.DS_Store[m
+[32m+[m[32mThumbs.db[m
+[1mdiff --git a/README.md b/README.md[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4d928d6[m
+[1m--- /dev/null[m
+[1m+++ b/README.md[m
+[36m@@ -0,0 +1,32 @@[m
+[32m+[m[32m# AI Security Project[m
+[32m+[m
+[32m+[m[32m## Overview[m
+[32m+[m[32mA beginner-friendly cybersecurity project built with Python to explore security checks, risk detection, and safer AI-assisted workflows.[m
+[32m+[m
+[32m+[m[32m## Objectives[m
+[32m+[m[32m- Learn Python through practical security development.[m
+[32m+[m[32m- Identify potential security risks in test data.[m
+[32m+[m[32m- Explore phishing detection and suspicious message analysis.[m
+[32m+[m[32m- Maintain logs of security checks.[m
+[32m+[m[32m- Test security controls in a safe local environment.[m
+[32m+[m
+[32m+[m[32m## Technology Stack[m
+[32m+[m[32m- Python[m
+[32m+[m[32m- Visual Studio Code[m
+[32m+[m[32m- Git and GitHub[m
+[32m+[m
+[32m+[m[32m## Current Progress[m
+[32m+[m[32m- [x] Python environment configured[m
+[32m+[m[32m- [x] Git repository initialized[m
+[32m+[m[32m- [x] `.gitignore` created[m
+[32m+[m[32m- [x] Python program runs successfully[m
+[32m+[m[32m- [ ] Implement security checks[m
+[32m+[m[32m- [ ] Add suspicious-message detection[m
+[32m+[m[32m- [ ] Add audit logging[m
+[32m+[m[32m- [ ] Write tests and documentation[m
+[32m+[m
+[32m+[m[32m## Safety[m
+[32m+[m[32mThis project is intended for educational use with synthetic data and systems you are authorized to test.[m
+[32m+[m
+[32m+[m[32m## Status[m
+[32m+[m[32mUnder development.[m
+\ No newline at end of file[m
+[1mdiff --git a/security_checker.py b/security_checker.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ddcedb7[m
+[1m--- /dev/null[m
+[1m+++ b/security_checker.py[m
+[36m@@ -0,0 +1,11 @@[m
+[32m+[m[32mfrom datetime import datetime[m
+[32m+[m
+[32m+[m[32mprint("=" * 40)[m
+[32m+[m[32mprint("       AI SECURITY PROJECT")[m
+[32m+[m[32mprint("=" * 40)[m
+[32m+[m
+[32m+[m[32mprint("Project status: Running")[m
+[32m+[m[32mprint("Python security lab initialized.")[m
+[32m+[m[32mprint("Current time:", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))[m
+[32m+[m
+[32m+[m[32mprint("\nNext step: Build our security checks.")[m
+\ No newline at end of file[m
