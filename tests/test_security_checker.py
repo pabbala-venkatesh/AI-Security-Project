@@ -1,6 +1,6 @@
-import unittest
 
-from security_checker import analyze_message
+import unittest
+from security_checker import analyze_message, assess_risk
 
 
 class TestSecurityChecker(unittest.TestCase):
@@ -24,6 +24,26 @@ class TestSecurityChecker(unittest.TestCase):
             "Your class starts at 10 AM tomorrow."
         )
         self.assertEqual(result, [])
+
+    def test_high_risk_message(self):
+        result = assess_risk(
+            "URGENT ACTION REQUIRED: Verify your account "
+            "at http://example.com"
+        )
+        self.assertEqual(result["score"], 70)
+        self.assertEqual(result["level"], "High")
+
+    def test_medium_risk_message(self):
+        result = assess_risk("Verify your account")
+        self.assertEqual(result["score"], 25)
+        self.assertEqual(result["level"], "Medium")
+
+    def test_low_risk_message(self):
+        result = assess_risk(
+            "Your class starts at 10 AM tomorrow."
+        )
+        self.assertEqual(result["score"], 0)
+        self.assertEqual(result["level"], "Low")
 
 
 if __name__ == "__main__":
