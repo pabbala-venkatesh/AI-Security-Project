@@ -90,3 +90,9 @@ of phishing.
 This project is for educational purposes. Always verify
 suspicious messages independently and never share passwords
 or one-time passwords with untrusted websites.
+
+
+## Live Demo
+
+Try the app online:
+https://ai-security-project-3higvzoyy9kesnzeccs8bp.streamlit.app/
