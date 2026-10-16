@@ -8,44 +8,62 @@ st.set_page_config(
     layout="centered",
 )
 
-st.title("AI Security Checker")
-st.write("Check messages for common phishing warning signs.")
+st.title("🛡️ AI Security Checker")
+st.write(
+    "Analyze messages for common phishing warning signs."
+)
 
-st.warning(
-    "Educational prototype. This rule-based score "
-    "cannot prove whether a message is safe or malicious."
+st.info(
+    "Educational project: results are rule-based indicators, "
+    "not proof that a message is safe or malicious."
 )
 
 message = st.text_area(
     "Paste a message to analyze",
-    placeholder="Paste your test message here...",
+    placeholder=(
+        "Example: Urgent action required! "
+        "Verify your account at https://bit.ly/example"
+    ),
     height=160,
 )
 
 if st.button("Analyze Message", type="primary"):
     if not message.strip():
-        st.info("Please enter a message first.")
+        st.warning("Please enter a message first.")
     else:
         result = assess_risk(message)
 
         st.subheader("Analysis Results")
-        st.metric("Estimated Risk Score", f"{result['score']}/100")
+
+        col1, col2 = st.columns(2)
+        col1.metric(
+            "Risk Score",
+            f"{result['score']}/100",
+        )
+        col2.metric(
+            "Risk Level",
+            result["level"].upper(),
+        )
 
         if result["level"] == "High":
-            st.error("Risk Level: HIGH")
+            st.error("High risk: review this message carefully.")
         elif result["level"] == "Medium":
-            st.warning("Risk Level: MEDIUM")
+            st.warning("Medium risk: check the warning signs.")
         else:
-            st.success("Risk Level: LOW")
+            st.success(
+                "Low risk: no strong indicators were detected "
+                "by the current rules."
+            )
+
+        st.subheader("Warning Signs")
 
         if result["findings"]:
-            st.write("Warning signs found:")
             for finding in result["findings"]:
                 st.write(f"- {finding}")
         else:
-            st.write("No listed warning signs detected.")
+            st.write("No listed warning signs were detected.")
 
         st.caption(
-            "A low score does not guarantee safety. "
-            "Always check links and requests independently."
+            "This tool does not open or verify links. "
+            "Never enter passwords or OTPs on an untrusted site."
         )
