@@ -19,6 +19,17 @@ class TestSecurityChecker(unittest.TestCase):
             any("link" in item.lower() for item in result)
         )
 
+    def test_detects_shortened_url(self):
+        result = analyze_message(
+            "Check this link https://bit.ly/example"
+        )
+        self.assertTrue(
+            any(
+                "shortened url detected" in item.lower()
+                for item in result
+            )
+        )
+
     def test_normal_message_has_no_warnings(self):
         result = analyze_message(
             "Your class starts at 10 AM tomorrow."
